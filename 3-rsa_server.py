@@ -50,11 +50,9 @@ conn.send(f"{e},{n}".encode())
 
 # Receive ciphertext
 cipher = int(conn.recv(1024).decode())
-print("\nReceived Ciphertext:", cipher)
 
 # Decrypt message
 msg = rsa_decrypt(cipher, private_key)
-print("Decrypted Message:", msg)
 
 conn.close()
 s.close()
