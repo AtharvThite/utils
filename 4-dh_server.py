@@ -21,7 +21,7 @@ conn.send(f"{p},{g},{A}".encode())
 # Receive client's public key B
 B = int(conn.recv(1024).decode())
 print("Received B from client:", B)
-
+ 
 # Compute shared secret
 shared_secret = pow(B, a, p)
 print("Shared Secret (Server):", shared_secret)
