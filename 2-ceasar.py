@@ -1,9 +1,9 @@
 def ceasar_encrypt(text, key):
+    text = text.lower()
     cipher = ""
     for c in text:
         if c.isalpha():
-            base = ord('A') if c.isupper() else ord('a')
-            cipher += chr((ord(c)-base+key)%26 + base)
+            cipher += chr((ord(c)+key-97)%26 + 97)
         else:
             cipher += c
     return cipher
